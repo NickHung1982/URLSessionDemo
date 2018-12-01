@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,59 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="urlSessionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f3j-Eo-6Zj">
+                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="EVv-TF-Vfg"/>
+                                    <constraint firstAttribute="height" constant="128" id="Lr7-ja-Z8d"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUA-GT-BX2">
+                                <rect key="frame" x="132.5" y="405" width="110" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="FLN-LU-sJ8"/>
+                                    <constraint firstAttribute="height" constant="30" id="HQm-zD-aMq"/>
+                                </constraints>
+                                <state key="normal" title="Load Image"/>
+                                <connections>
+                                    <action selector="action_loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JN6-pR-157"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gHs-bw-4PJ">
+                                <rect key="frame" x="87.5" y="239" width="200" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="kPW-nX-MG1"/>
+                                    <constraint firstAttribute="width" constant="200" id="xAl-B5-4SD"/>
+                                </constraints>
+                                <color key="progressTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NUA-GT-BX2" firstAttribute="top" secondItem="f3j-Eo-6Zj" secondAttribute="bottom" constant="7.5" id="2lR-xe-4Pu"/>
+                            <constraint firstItem="gHs-bw-4PJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GiY-WO-r8N"/>
+                            <constraint firstItem="NUA-GT-BX2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uv0-wO-abK"/>
+                            <constraint firstItem="f3j-Eo-6Zj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bEo-Aj-4Nt"/>
+                            <constraint firstItem="f3j-Eo-6Zj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gR0-Qe-l4H"/>
+                            <constraint firstItem="f3j-Eo-6Zj" firstAttribute="top" secondItem="gHs-bw-4PJ" secondAttribute="bottom" constant="28.5" id="yGf-hO-tK6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="button1" destination="NUA-GT-BX2" id="W2N-ft-7sd"/>
+                        <outlet property="imageview1" destination="f3j-Eo-6Zj" id="mfl-ai-7o2"/>
+                        <outlet property="progressView1" destination="gHs-bw-4PJ" id="ACl-Ef-G4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
